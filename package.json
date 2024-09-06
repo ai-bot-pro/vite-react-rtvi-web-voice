@@ -1,0 +1,51 @@
+{
+  "name": "vite-react-rtvi-web-voice",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-slider": "^1.2.0",
+    "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "@uidotdev/usehooks": "^2.4.1",
+    "chat-bot-rtvi-client": "0.1.2",
+    "chat-bot-rtvi-daily-client": "0.1.2",
+    "chat-bot-rtvi-web-react": "0.1.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "deepmerge-ts": "^7.1.0",
+    "lucide-react": "^0.378.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-sparklines": "^1.7.0",
+    "tailwind-merge": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-sparklines": "^1.7.5",
+    "@typescript-eslint/eslint-plugin": "^8.2.0",
+    "@typescript-eslint/parser": "^8.2.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "postcss": "^8.4.45",
+    "postcss-nesting": "^13.0.0",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5",
+    "vite": "^5.3.1",
+    "vite-plugin-static-copy": "^1.0.5",
+    "vite-plugin-webfont-dl": "^3.9.4"
+  },
+  "packageManager": "yarn@4.4.1"
+}
