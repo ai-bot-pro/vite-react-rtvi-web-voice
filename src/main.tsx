@@ -24,6 +24,8 @@ const showSplashPage = import.meta.env.VITE_SHOW_SPLASH ? true : false;
 // @ts-expect-error - Firefox is not supported
 const isFirefox: boolean = typeof InstallTrigger !== "undefined";
 const serverUrl = import.meta.env.VITE_BASE_URL;
+const botReadyTimeout =
+  import.meta.env.VITE_BOT_READY_TIMEOUT || BOT_READY_TIMEOUT;
 export const Layout = () => {
   const voiceClientRef = useRef<DailyVoiceClient | null>(null);
   const [showSplash, setShowSplash] = useState<boolean>(showSplashPage);
@@ -34,17 +36,17 @@ export const Layout = () => {
     }
 
     let voiceClientParams: VoiceClientOptions = {
-      baseUrl: import.meta.env.VITE_BASE_URL,
+      baseUrl: serverUrl,
       services: defaultServices,
       config: defaultConfig,
-      timeout: BOT_READY_TIMEOUT,
+      timeout: botReadyTimeout,
     };
     if (serverUrl.includes("api.cortex.cerebrium.ai")) {
       voiceClientParams = {
-        baseUrl: import.meta.env.VITE_BASE_URL,
+        baseUrl: serverUrl,
         services: defaultServices,
         config: defaultConfig,
-        timeout: BOT_READY_TIMEOUT * 2,
+        timeout: botReadyTimeout,
         customHeaders: {
           Authorization: `Bearer ${import.meta.env.VITE_SERVER_AUTH}`,
         },

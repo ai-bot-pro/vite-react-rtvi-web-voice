@@ -2166,40 +2166,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chat-bot-rtvi-client@npm:0.1.2":
-  version: 0.1.2
-  resolution: "chat-bot-rtvi-client@npm:0.1.2"
+"chat-bot-rtvi-client@npm:0.1.3":
+  version: 0.1.3
+  resolution: "chat-bot-rtvi-client@npm:0.1.3"
   dependencies:
     "@types/events": "npm:^3.0.3"
     deepmerge-ts: "npm:^7.0.3"
     events: "npm:^3.3.0"
     nanoid: "npm:^5.0.7"
     typed-emitter: "npm:^2.1.0"
-  checksum: 10c0/edb52258c6f8fec4be211500cb584e6ca828981bec8ff0b1f00bc2dbf5bf421d885536ec87f44c943f8bfa14ffc1abc8c312dff60189d0c10af6c5046cb5645a
+  checksum: 10c0/e4874e47e4793f493bce1726ad6af72cb52b9134c415a663f4d48dffbf3f20cc087c5e81eb215ea9926f786c286fb30e0e6fbb04f49078efcc16d43a365f8283
   languageName: node
   linkType: hard
 
-"chat-bot-rtvi-daily-client@npm:0.1.2":
-  version: 0.1.2
-  resolution: "chat-bot-rtvi-daily-client@npm:0.1.2"
+"chat-bot-rtvi-daily-client@npm:0.1.3":
+  version: 0.1.3
+  resolution: "chat-bot-rtvi-daily-client@npm:0.1.3"
   dependencies:
     "@daily-co/daily-js": "npm:>=0.68.0"
   peerDependencies:
     chat-bot-rtvi-client: "*"
-  checksum: 10c0/976d209fed0735c13c5e841d7f6c5dcc1a4fda171a9bf91416d903df1cd3a89a555a90d5a8b922227ac832f271776107c34b21fe32be7360e5d7b72eb46a9189
+  checksum: 10c0/ceb4ab2e804ef95d92af1990327b5e544f65fb992a3b3bea68024904f97f4b62c2e09e57b9a62412ec2f548b2a684137f5745f0bb5b5146e13ed2342557d876b
   languageName: node
   linkType: hard
 
-"chat-bot-rtvi-web-react@npm:0.1.2":
-  version: 0.1.2
-  resolution: "chat-bot-rtvi-web-react@npm:0.1.2"
+"chat-bot-rtvi-web-react@npm:0.1.3":
+  version: 0.1.3
+  resolution: "chat-bot-rtvi-web-react@npm:0.1.3"
   dependencies:
     jotai: "npm:^2.9.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
   peerDependencies:
     chat-bot-rtvi-client: "*"
-  checksum: 10c0/2dbc2b3e7c72bffb0cf30c509ca5d0ba01865e7e037d8bc0590d99e291afb95cc2d4b484695a5202ac4e3cd59939548c60fbed829cc788dc5e71634d058fac67
+  checksum: 10c0/67290415c29081a91515dc46d52efe9db1799ad2fdc0381951e9a1836e4d0a82f07a8e8f073696b831a7073eedaceb8d711972e48c76728b1f960c288d1b812d
   languageName: node
   linkType: hard
 
@@ -5943,9 +5943,9 @@ __metadata:
     "@uidotdev/usehooks": "npm:^2.4.1"
     "@vitejs/plugin-react": "npm:^4.3.1"
     autoprefixer: "npm:^10.4.20"
-    chat-bot-rtvi-client: "npm:0.1.2"
-    chat-bot-rtvi-daily-client: "npm:0.1.2"
-    chat-bot-rtvi-web-react: "npm:0.1.2"
+    chat-bot-rtvi-client: "npm:0.1.3"
+    chat-bot-rtvi-daily-client: "npm:0.1.3"
+    chat-bot-rtvi-web-react: "npm:0.1.3"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.1"
     deepmerge-ts: "npm:^7.1.0"
