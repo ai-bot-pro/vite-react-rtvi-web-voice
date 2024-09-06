@@ -37,11 +37,22 @@ export const Splash: React.FC<SplashProps> = ({ handleReady }) => {
           <footer className="flex flex-col lg:gap-2">
             <Button variant="light" asChild>
               <a
+                href="https://github.com/ai-bot-pro/vite-react-rtvi-web-voice"
+                className="text-indigo-600"
+              >
+                <Book className="size-6" />
+                Frontend source code [vite-react-rtvi-web-voice]. (global edge
+                deployment)
+              </a>
+            </Button>
+            <Button variant="light" asChild>
+              <a
                 href="https://github.com/ai-bot-pro/achatbot"
                 className="text-indigo-600"
               >
                 <Book className="size-6" />
-                Demo source code
+                Backend source code [achatbot], welcome to contribute! (deploy
+                on us-east-1)
               </a>
             </Button>
           </footer>
