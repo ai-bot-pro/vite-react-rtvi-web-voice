@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { useEffect, useRef, useState } from "react";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
-import { LLMHelper } from "chat-bot-rtvi-client";
+import { LLMHelper, VoiceClientOptions } from "chat-bot-rtvi-client";
 import { DailyVoiceClient } from "chat-bot-rtvi-daily-client";
 import { VoiceClientAudio, VoiceClientProvider } from "chat-bot-rtvi-web-react";
 
@@ -23,6 +23,7 @@ const showSplashPage = import.meta.env.VITE_SHOW_SPLASH ? true : false;
 // Show warning on Firefox
 // @ts-expect-error - Firefox is not supported
 const isFirefox: boolean = typeof InstallTrigger !== "undefined";
+const serverUrl = import.meta.env.VITE_BASE_URL;
 export const Layout = () => {
   const voiceClientRef = useRef<DailyVoiceClient | null>(null);
   const [showSplash, setShowSplash] = useState<boolean>(showSplashPage);
@@ -32,12 +33,32 @@ export const Layout = () => {
       return;
     }
 
-    const voiceClient = new DailyVoiceClient({
-      baseUrl: import.meta.env.VITE_BASE_URL || "/api",
+    let voiceClientParams: VoiceClientOptions = {
+      baseUrl: import.meta.env.VITE_BASE_URL,
       services: defaultServices,
       config: defaultConfig,
       timeout: BOT_READY_TIMEOUT,
-    });
+    };
+    if (serverUrl.includes("api.cortex.cerebrium.ai")) {
+      voiceClientParams = {
+        baseUrl: import.meta.env.VITE_BASE_URL,
+        services: defaultServices,
+        config: defaultConfig,
+        timeout: BOT_READY_TIMEOUT * 2,
+        customHeaders: {
+          Authorization: `Bearer ${import.meta.env.VITE_SERVER_AUTH}`,
+        },
+        customBodyParams: {
+          chat_bot_name: "DailyRTVIGeneralBot",
+          info: {
+            config_list: defaultConfig,
+            services: defaultServices,
+          },
+        },
+      };
+    }
+    const voiceClient = new DailyVoiceClient(voiceClientParams);
+
     const llmHelper = new LLMHelper({});
     voiceClient.registerHelper("llm", llmHelper);
 
