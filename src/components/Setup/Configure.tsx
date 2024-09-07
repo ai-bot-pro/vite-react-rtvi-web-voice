@@ -68,6 +68,13 @@ export const Configure: React.FC<ConfigureProps> = React.memo(
         }
 
         voiceClient.updateConfig(newConfig);
+        voiceClient.updateCustomBodyParams({
+          chat_bot_name: "DailyRTVIGeneralBot",
+          info: {
+            config_list: newConfig,
+            services: services,
+          },
+        });
       },
       [voiceClient, inSession, handleConfigUpdate]
     );
