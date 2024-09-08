@@ -13,8 +13,11 @@ export const Splash: React.FC<SplashProps> = ({ handleReady }) => {
       <main className="w-full flex items-center justify-center">
         <div className="flex flex-col gap-8 lg:gap-12 items-center max-w-full lg:max-w-3xl">
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-balance text-left">
-            Chat Bots Demo
+            Chat Bots 聊天机器人
           </h1>
+          <h3 className="text-primary-500 text-xl font-semibold leading-relaxed">
+            support api llm services 支持的api大模型服务(配置可选)
+          </h3>
 
           <p className="text-primary-500 text-xl font-semibold leading-relaxed">
             Groq/Together Llama 3.1 Instruct Turbo &nbsp; 70B <br />
@@ -41,8 +44,8 @@ export const Splash: React.FC<SplashProps> = ({ handleReady }) => {
                 className="text-indigo-600"
               >
                 <Book className="size-6" />
-                Frontend source code [vite-react-rtvi-web-voice]. (global edge
-                deployment)
+                FE source code [vite-react-rtvi-web-voice]
+                前端源码【vite-react-rtvi-web-voice】
               </a>
             </Button>
             <Button variant="light" asChild>
@@ -51,8 +54,8 @@ export const Splash: React.FC<SplashProps> = ({ handleReady }) => {
                 className="text-indigo-600"
               >
                 <Book className="size-6" />
-                Backend source code [achatbot], welcome to contribute! (deploy
-                on us-east-1)
+                BE source code [achatbot], welcome to contribute!
+                后端源码【achatbot】，欢迎参与贡献！
               </a>
             </Button>
           </footer>
