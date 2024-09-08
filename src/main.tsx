@@ -40,6 +40,9 @@ export const Layout = () => {
       services: defaultServices,
       config: defaultConfig,
       timeout: botReadyTimeout,
+      customHeaders: {
+        Authorization: `Bearer ${import.meta.env.VITE_SERVER_AUTH}`,
+      },
     };
     if (serverUrl.includes("api.cortex.cerebrium.ai")) {
       voiceClientParams = {
