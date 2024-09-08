@@ -352,6 +352,7 @@ export const defaultBotProfile = "voice_2024_08";
 export const defaultMaxDuration = 600;
 
 export const defaultServices = {
+  pipeline: "achatbot",
   vad: "silero",
   asr: "deepgram",
   llm: "groq",

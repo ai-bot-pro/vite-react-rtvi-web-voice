@@ -110,6 +110,15 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
 
     const updatedConfigOptions: VoiceClientConfigOption[] = [
       {
+        // pipeline params set !TODO: make it configurable @weedge
+        service: "pipeline",
+        options: [
+          { name: "allow_interruptions", value: false },
+          { name: "enable_metrics", value: true },
+          { name: "report_only_initial_ttfb", value: true },
+        ],
+      },
+      {
         service: "vad",
         options: [
           { name: "args", value: { stop_secs: vadStopSecs } },
