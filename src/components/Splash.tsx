@@ -20,17 +20,15 @@ export const Splash: React.FC<SplashProps> = ({ handleReady }) => {
           </h3>
 
           <p className="text-primary-500 text-xl font-semibold leading-relaxed">
-            Groq/Together Llama 3.1 Instruct Turbo &nbsp; 70B <br />
-            Groq/Together Llama 3.1 Instruct Turbo &nbsp; 8B <br />
-            Together Llama 3.1 Instruct Turbo &nbsp; 405B <br />
-            Groq Llama 3 Instruct &nbsp; 70B <br />
-            Groq Llama 3 Instruct &nbsp; 8B <br />
+            Together Qwen3 Throughput &nbsp; 235B-128E-A22B <br />
+            Together DeepSeek-R1 &nbsp; 671B-256E-A37B <br />
+            Together DeepSeek V3-0324 &nbsp; 671B-256E-A37B <br />
+            Together Llama 4 Maverick(17Bx128E) &nbsp; 400B-128E-A17B <br />
+            Together Qwen 2.5 Instruct Turbo &nbsp; 7B <br />
             Together Qwen 2 Instruct &nbsp; 72B <br />
             Together Qwen 1.5 Chat &nbsp; 110B <br />
             Together Qwen 1.5 Chat &nbsp; 72B <br />
             Together Google Gemma 2 Instruct &nbsp; 27B <br />
-            Groq/Together Google Gemma 2 Instruct &nbsp; 9B <br />
-            Groq Google Gemma Instruct &nbsp; 7B <br />
           </p>
 
           <Button onClick={() => handleReady()}>Let&apos;s Chat</Button>

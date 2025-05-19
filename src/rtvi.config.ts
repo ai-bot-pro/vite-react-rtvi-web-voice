@@ -27,25 +27,31 @@ export const ASR_MODEL_CHOICES = [
 
 export const LLM_MODEL_CHOICES = [
   {
-    label: "Groq AI",
-    value: "groq",
-    base_url: "https://api.groq.com/openai/v1",
-    tag: "openai_llm_processor",
-    models: [//https://console.groq.com/docs/models
-      { label: "Llama 3.1 70B", value: "llama-3.1-70b-versatile" },
-      { label: "Llama 3.1 8B", value: "llama-3.1-8b-instant" },
-      { label: "Meta Llama 3 70B", value: "llama3-70b-8192" },
-      { label: "Meta Llama 3 8B", value: "llama3-8b-8192" },
-      { label: "Gemma 2 9B", value: "gemma2-9b-it" },
-      { label: "Gemma 7B", value: "gemma2-7b-it" },
-    ],
-  },
-  {
     label: "Together AI",
     value: "together",
     base_url: "https://api.together.xyz/v1",
     tag: "openai_llm_processor",
     models: [//https://docs.together.ai/docs/chat-models
+      {
+        label: "Qwen3 235B A22B Throughput",
+        value: "Qwen/Qwen3-235B-A22B-fp8-tput",
+      },
+      {
+        label: "DeepSeek-R1",
+        value: "deepseek-ai/DeepSeek-R1",
+      },
+      {
+        label: "DeepSeek V3-0324",
+        value: "deepseek-ai/DeepSeek-V3",
+      },
+      {
+        label: "Llama 4 Maverick(17Bx128E)",
+        value: "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+      },
+      {
+        label: "Qwen 2.5 7B Instruct Turbo",
+        value: "Qwen/Qwen2.5-7B-Instruct-Turbo",
+      },
       {
         label: "Qwen 2 Instruct (72B)",
         value: "Qwen/Qwen2-72B-Instruct",
@@ -80,6 +86,22 @@ export const LLM_MODEL_CHOICES = [
       },
     ],
   },
+  /*
+  {
+    label: "Groq AI",
+    value: "groq",
+    base_url: "https://api.groq.com/openai/v1",
+    tag: "openai_llm_processor",
+    models: [//https://console.groq.com/docs/models
+      { label: "Llama 3.1 70B", value: "llama-3.1-70b-versatile" },
+      { label: "Llama 3.1 8B", value: "llama-3.1-8b-instant" },
+      { label: "Meta Llama 3 70B", value: "llama3-70b-8192" },
+      { label: "Meta Llama 3 8B", value: "llama3-8b-8192" },
+      { label: "Gemma 2 9B", value: "gemma2-9b-it" },
+      { label: "Gemma 7B", value: "gemma2-7b-it" },
+    ],
+  },
+  */
   /*
   {
     label: "Anthropic",

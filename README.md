@@ -11,7 +11,7 @@ VITE_SHOW_SPLASH=
 ```
 
 ```
-yarn
+yarn install
 yarn run dev
 ```
 
