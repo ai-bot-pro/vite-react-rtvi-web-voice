@@ -15,20 +15,10 @@ export const Splash: React.FC<SplashProps> = ({ handleReady }) => {
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-balance text-left">
             Chat Bots 聊天机器人
           </h1>
-          <h3 className="text-primary-500 text-xl font-semibold leading-relaxed">
-            support api llm services 支持的api大模型服务(配置可选)
-          </h3>
 
           <p className="text-primary-500 text-xl font-semibold leading-relaxed">
-            Together Qwen3 Throughput &nbsp; 235B-128E-A22B <br />
-            Together DeepSeek-R1 &nbsp; 671B-256E-A37B <br />
-            Together DeepSeek V3-0324 &nbsp; 671B-256E-A37B <br />
-            Together Llama 4 Maverick(17Bx128E) &nbsp; 400B-128E-A17B <br />
-            Together Qwen 2.5 Instruct Turbo &nbsp; 7B <br />
-            Together Qwen 2 Instruct &nbsp; 72B <br />
-            Together Qwen 1.5 Chat &nbsp; 110B <br />
-            Together Qwen 1.5 Chat &nbsp; 72B <br />
-            Together Google Gemma 2 Instruct &nbsp; 27B <br />
+            Together Meta Llama 3.3 70B Instruct Turbo Free <br />
+            Together DeepSeek R1 Distill Llama 70B Free <br />
           </p>
 
           <Button onClick={() => handleReady()}>Let&apos;s Chat</Button>

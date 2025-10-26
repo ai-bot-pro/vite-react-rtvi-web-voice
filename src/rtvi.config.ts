@@ -1,5 +1,5 @@
 
-export const BOT_READY_TIMEOUT = 15 * 1000; // 15 seconds
+export const BOT_READY_TIMEOUT = 30 * 1000; // 30 seconds
 
 export const VAD_MODEL_CHOICES = [
   {
@@ -33,56 +33,12 @@ export const LLM_MODEL_CHOICES = [
     tag: "openai_llm_processor",
     models: [//https://docs.together.ai/docs/chat-models
       {
-        label: "Qwen3 235B A22B Throughput",
-        value: "Qwen/Qwen3-235B-A22B-fp8-tput",
+        label: "Meta Llama 3.3 70B Instruct Turbo Free",
+        value: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
       },
       {
-        label: "DeepSeek-R1",
-        value: "deepseek-ai/DeepSeek-R1",
-      },
-      {
-        label: "DeepSeek V3-0324",
-        value: "deepseek-ai/DeepSeek-V3",
-      },
-      {
-        label: "Llama 4 Maverick(17Bx128E)",
-        value: "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
-      },
-      {
-        label: "Qwen 2.5 7B Instruct Turbo",
-        value: "Qwen/Qwen2.5-7B-Instruct-Turbo",
-      },
-      {
-        label: "Qwen 2 Instruct (72B)",
-        value: "Qwen/Qwen2-72B-Instruct",
-      },
-      {
-        label: "Qwen 1.5 Chat (110B)",
-        value: "Qwen/Qwen1.5-110B-Chat",
-      },
-      {
-        label: "Qwen 1.5 Chat (72B)",
-        value: "Qwen/Qwen1.5-72B-Chat",
-      },
-      {
-        label: "Meta Llama 3.1 405B Instruct Turbo",
-        value: "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
-      },
-      {
-        label: "Meta Llama 3.1 70B Instruct Turbo",
-        value: "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
-      },
-      {
-        label: "Meta Llama 3.1 8B Instruct Turbo",
-        value: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
-      },
-      {
-        label: "Gemma 2 27B",
-        value: "google/gemma-2-27b-it",
-      },
-      {
-        label: "Gemma 2 9B",
-        value: "google/gemma-2-9b-it",
+        label: "DeepSeek R1 Distill Llama 70B Free",
+        value: "deepseek-ai/DeepSeek-R1-Distill-Llama-70B-free",
       },
     ],
   },
@@ -377,7 +333,7 @@ export const defaultServices = {
   pipeline: "achatbot",
   vad: "silero",
   asr: "deepgram",
-  llm: "groq",
+  llm: "together",
   tts: "edge",
 };
 
@@ -393,15 +349,15 @@ export const defaultConfig = [
   {
     service: "vad",
     options: [
-      { name: "args", value: { stop_secs: 0.7 } },
+      { name: "args", value: { start_secs: 0.0, stop_secs: 0.0, confidence: 0.7, min_volume: 0.6, onnx: true } },
       { name: "tag", value: "silero_vad_analyzer" },
     ],
   },
   {
     service: "asr",
     options: [
-      { name: "args", value: { language: "zh", model: "nova-2" } },
-      { name: "tag", value: "deepgram_asr_processor" },
+      { name: "args", value: { language: "zn", model_name_or_path: "/root/.achatbot/models/FunAudioLLM/SenseVoiceSmall" } },
+      { name: "tag", value: "sense_voice_asr" },
     ],
   },
   {

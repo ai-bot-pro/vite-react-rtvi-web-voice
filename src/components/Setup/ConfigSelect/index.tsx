@@ -121,7 +121,16 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
       {
         service: "vad",
         options: [
-          { name: "args", value: { stop_secs: vadStopSecs } },
+          {
+            name: "args",
+            value: {
+              start_secs: 0.0,
+              stop_secs: vadStopSecs,
+              confidence: 0.7,
+              min_volume: 0.6,
+              onnx: true,
+            },
+          },
           { name: "tag", value: "silero_vad_analyzer" },
         ],
       },
@@ -130,9 +139,9 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
         options: [
           {
             name: "args",
-            value: { language: characterData.language, model: "nova-2" },
+            value: { language: "zn", model_name_or_path: "/root/.achatbot/models/FunAudioLLM/SenseVoiceSmall" },
           },
-          { name: "tag", value: "deepgram_asr_processor" },
+          { name: "tag", value: "sense_voice_asr" },
         ],
       },
       {
