@@ -101,9 +101,12 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
     });
   }, [voiceClient]);
 
-  // Update the config options when the character changes
-  useEffect(() => {
-    if (!llmModel || !llmProvider || !vadStopSecs || !voiceClient) return;
+  // Create a function to update config with current values
+  const updateConfigWithCurrentValues = useCallback(() => {
+    // Check if we have the minimum required values
+    if (!llmProvider || !llmModel || vadStopSecs === undefined) {
+      return;
+    }
 
     // Get character data and update config
     const characterData = PRESET_CHARACTERS[bufferedCharacter] as CharacterData;
@@ -183,13 +186,28 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
     console.log("updatedConfigOptions", updatedConfigOptions);
     onConfigUpdate(updatedConfigOptions, { llm: llmProvider });
   }, [
+    bufferedCharacter,
+    llmProvider,
+    llmModel,
+    llmBaseUrl,
+    vadStopSecs,
+    onConfigUpdate
+  ]);
+
+  // Update the config options when any relevant value changes
+  useEffect(() => {
+    // Only try to update if we have a voice client
+    if (voiceClient) {
+      updateConfigWithCurrentValues();
+    }
+  }, [
     llmProvider,
     llmBaseUrl,
     llmModel,
-    onConfigUpdate,
     bufferedCharacter,
     vadStopSecs,
     voiceClient,
+    updateConfigWithCurrentValues
   ]);
 
   const availableModels = LLM_MODEL_CHOICES.find(
